@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/api/search")
 def search_case():
     connection = psycopg2.connect(
-    database="postgres", user='postgres', password='dharshana@16', host='127.0.0.1', port= '5432')
+    database="postgres", user='postgres', password='dharsh', host='127.0.0.1', port= '5432')
     connection.autocommit = True
     cursor = connection.cursor()
     query1='SELECT ifsc, bank_id, branch, address, city, district, state FROM bank_db WHERE ifsc LIKE CONCAT(%s) OR branch LIKE CONCAT(%s) OR address LIKE CONCAT(%s) OR city LIKE CONCAT(%s) OR district LIKE CONCAT(%s) OR state LIKE CONCAT(%s) OR bank_name LIKE CONCAT(%s) ORDER BY ifsc LIMIT %s OFFSET %s'
@@ -37,7 +37,7 @@ def branch_case():
    
 
     connection = psycopg2.connect(
-    database="postgres", user='postgres', password='dharshana@16', host='127.0.0.1', port= '5432')
+    database="postgres", user='postgres', password='dharsh', host='127.0.0.1', port= '5432')
 
     connection.autocommit = True
 
